@@ -80,11 +80,15 @@ public class Drivetrain {
 	 */
 	void draw(Graphics graphics) {
 		int pixelPosition = (int) ((position + Constants.railWidth/2)*Constants.screenWidth/Constants.railWidth);
+		int targetPixelPosition = (int) ((target + Constants.railWidth/2)*Constants.screenWidth/Constants.railWidth);
 		int drawXPosition = pixelPosition - Constants.driveWidth/2;
 		int drawYPosition = Constants.screenHeight/2-Constants.driveHeight/2;
 		
 		graphics.setColor(Color.DARK_GRAY);
 		graphics.fillRect(0, Constants.screenHeight/2 - 5, Constants.screenWidth, 10);
+		
+		graphics.setColor(Color.RED);
+		graphics.fillRect(((int) targetPixelPosition - 2), Constants.screenHeight/2 - 40, 4, 80);
 		
 		graphics.setColor(Color.GRAY);
 		graphics.fillRect(drawXPosition, drawYPosition, Constants.driveWidth, Constants.driveHeight);
