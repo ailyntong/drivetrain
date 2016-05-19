@@ -24,7 +24,7 @@ public class Constants {
 	
 	public static final double driveMass = 1.0;
 	public static final double driveForce = 1000.0;
-	public static final double friction = 0.99;
+	public static final double friction = 10.0;
 	
 	
 	/** Control Specifications **/

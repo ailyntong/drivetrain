@@ -42,6 +42,14 @@ public class Drivetrain {
 		double acceleration = force/mass;
 		
 		velocity += acceleration/Constants.updateRate;		
+		
+		if(velocity > 0) {
+			velocity -= Math.min(velocity, Constants.friction * Constants.driveMass);
+		}
+		if(velocity < 0) {
+			velocity += Math.min(-velocity, Constants.friction * Constants.driveMass);
+		}
+		
 		position += velocity/Constants.updateRate;
 	}
 	
